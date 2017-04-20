@@ -1,1 +1,40 @@
-{     "devDependencies": {         "datadog-metrics": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-datadog-metrics",     "homepage": "https://github.com/npmtest/node-npmtest-datadog-metrics",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-datadog-metrics.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [datadog-metrics (v0.4.0)](https://github.com/dbader/node-datadog-metrics#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-datadog-metrics.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-datadog-metrics) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-datadog-metrics.svg)](https://travis-ci.org/npmtest/node-npmtest-datadog-metrics)",
+    "devDependencies": {
+        "datadog-metrics": "*",
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-datadog-metrics",
+    "keywords": [
+        "coverage",
+        "test",
+        "datadog-metrics"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_datadog_metrics.js",
+    "name": "npmtest-datadog-metrics",
+    "nameAlias": "npmtest_datadog_metrics",
+    "nameOriginal": "npmtest-datadog-metrics",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-datadog-metrics.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
